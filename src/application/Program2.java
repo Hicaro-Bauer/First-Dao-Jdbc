@@ -32,6 +32,12 @@ public class Program2 {
 		departmentDao.insert(newDepartment);
 		System.out.println("Inserted! New id = " + newDepartment.getId());
 	
+		System.out.println("=== TEST 4: department Update ===");
+		department = departmentDao.findById(4);
+		department.setName("Books");
+		departmentDao.update(department);
+		System.out.println("Update Completed!");
+		
 		sc.close();
 	}
 }
