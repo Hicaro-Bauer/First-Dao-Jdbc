@@ -16,17 +16,22 @@ public class Program2 {
 		
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 		
-		System.out.println("=== TEST 1: seller findById ===");
+		System.out.println("=== TEST 1: department findById ===");
 		Department department = departmentDao.findById(2);
 		System.out.println(department);
 
-		System.out.println("=== TEST 2: seller findAll ===");
+		System.out.println("=== TEST 2: department findAll ===");
 		List<Department> list = new ArrayList<>();
 		list = departmentDao.findAll();
 		for(Department obj : list) {
 			System.out.println(obj);
 		}
+		
+		System.out.println("=== TEST 3: department Insert ===");
+		Department newDepartment = new Department(null, "Impressoras");
+		departmentDao.insert(newDepartment);
+		System.out.println("Inserted! New id = " + newDepartment.getId());
+	
 		sc.close();
 	}
-
 }
